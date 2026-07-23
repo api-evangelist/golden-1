@@ -30,6 +30,8 @@ modified: '2026-07-23'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/golden-1-domain-security.yml
 - type: Website
   url: https://www.golden1.com/
 - type: LinkedIn
