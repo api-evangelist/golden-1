@@ -1,0 +1,39 @@
+aid: golden-1
+url: https://raw.githubusercontent.com/api-evangelist/golden-1/refs/heads/main/apis.yml
+name: Golden 1 Credit Union
+kind: company
+description: >-
+  Golden 1 Credit Union is a state-chartered, member-owned not-for-profit
+  financial cooperative headquartered in Sacramento, California, and is one of
+  the largest credit unions in the United States, serving roughly 1.1 million
+  members across California with approximately 20 billion dollars in assets.
+  Founded in 1933 and open to all Californians, it offers consumer checking,
+  savings, credit cards, auto and home loans, and digital banking, and holds the
+  naming rights to Golden 1 Center in Sacramento. Like most US credit unions,
+  Golden 1 publishes NO public developer portal and NO first-party public API;
+  its digital banking runs on a core-provider platform, and consumer-permissioned
+  account data is reachable only indirectly through third-party data aggregators
+  (Plaid, MX, Finicity, Akoya) rather than a documented first-party open-finance
+  API. US open finance is voluntary and fragmented, and this institution's public
+  API surface is honestly empty as of this record.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Credit Union
+- United States
+- Consumer Finance
+- Open Finance
+- Data Aggregation
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.golden1.com/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/golden-1-credit-union
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,74 @@
+aid: golden-1
+name: Golden 1 Credit Union
+review:
+  question: Does Golden 1 Credit Union expose a public, documented first-party developer API?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Golden 1 Credit Union publishes no public developer portal and no
+    first-party public API. Golden 1 is a large state-chartered, member-owned
+    credit union in Sacramento, California, and — like the vast majority of US
+    credit unions — participates in the digital/open-finance ecosystem only
+    through its core banking provider and third-party data aggregators, not via
+    a documented first-party API surface.
+
+    Direct probes on the review date: developer.golden1.com and
+    developers.golden1.com do not resolve (DNS NXDOMAIN); the primary site
+    golden1.com and www.golden1.com resolve and are live behind Akamai (bot
+    protection blocks unauthenticated automated fetches, returning connection
+    resets); api.golden1.com resolves to an Akamai edge alias and returns HTTP
+    403 with no documentation — it is a private backend for Golden 1's own
+    mobile and web banking clients, NOT a public developer API. No downloadable
+    OpenAPI or Swagger specification was located, so none was harvested.
+
+    US open finance is voluntary and fragmented; there is no single mandated
+    open-banking contract. Consumer-permissioned account data for Golden 1
+    members is reachable indirectly through third-party aggregators (Plaid, MX,
+    Finicity, Akoya) rather than a first-party open-finance API. No documented
+    FDX (Financial Data Exchange) participation and no published CFPB Section
+    1033 data-access posture were found for this institution as of the review
+    date. Authentication model: not applicable — no public API and therefore no
+    documented OAuth2/OIDC, API-key, or mTLS onboarding surface. Spec
+    provenance: none (no spec exists to attribute).
+  posture:
+    firstPartyDeveloperPortal: false
+    downloadableSpec: false
+    fdxParticipant: unknown
+    cfpb1033Posture: none-published
+    aggregatorAccessOnly: true
+    authModel: none-public
+    specProvenance: none
+  transports:
+    - protocol: REST
+      scheme: https
+      host: api.golden1.com
+      documented: false
+      public: false
+      note: Private Akamai-fronted backend for Golden 1's own apps; returns HTTP 403, no public docs.
+  probes:
+    - url: https://developer.golden1.com
+      result: DNS NXDOMAIN (does not resolve)
+    - url: https://developers.golden1.com
+      result: DNS NXDOMAIN (does not resolve)
+    - url: https://api.golden1.com/
+      httpStatus: 403
+      note: Resolves via Akamai (api.golden1.com.edgekey.net); private app backend, not a public developer API.
+    - url: https://www.golden1.com/
+      note: Resolves and live behind Akamai; WAF/bot protection blocks automated fetches (connection reset).
+sources:
+  - url: https://www.golden1.com/
+    type: Website
+    note: Institution's primary consumer banking site; no Developers/API section found.
+  - url: https://www.linkedin.com/company/golden-1-credit-union
+    type: LinkedIn
+    note: Company profile confirming Golden 1 Credit Union identity (Sacramento / El Dorado Hills, California).
+actions:
+  apisYmlUpdated: true
+  openapiHarvested: false
+  reason: |
+    No public API surface exists to model. apis[] is intentionally empty and
+    the record is an honest identity-only stub with an aggregator-only data
+    access note. No OpenAPI/Swagger was harvested because none is publicly
+    downloadable.
