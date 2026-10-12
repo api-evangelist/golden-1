@@ -1,0 +1,18 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/golden-1/integrations
+- https://zapier.com/apps/golden-1-credit-union/integrations
+- https://n8n.io/integrations/golden-1/
+- https://composio.dev/toolkits/golden-1
+- https://monid.ai/tools/golden-1
+checked:
+- https://composio.dev/toolkits/golden-1
+- https://monid.ai/tools/golden-1
+- https://n8n.io/integrations/golden-1/
+- https://zapier.com/apps/golden-1-credit-union/integrations
+- https://zapier.com/apps/golden-1/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
